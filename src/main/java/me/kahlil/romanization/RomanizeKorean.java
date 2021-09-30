@@ -1,6 +1,5 @@
-import static java.util.stream.Collectors.toSet;
+package me.kahlil.romanization;
 
-import com.github.kimkevin.hangulparser.HangulParserException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +13,6 @@ import java.util.regex.MatchResult;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import net.crizin.KoreanRomanizer;
 
 public class RomanizeKorean {
@@ -30,17 +28,15 @@ public class RomanizeKorean {
           "\t", " ",
           "\\n\\s+", "\n");
 
-  private static final Pattern CAPITOLO =
-      Pattern.compile("^CAPITOLO[ \t]*[0-9]+.*", Pattern.MULTILINE);
+  private static final Set<Pattern> IGNORED_LINES =
+      Set.of(
+          // These are chapter header in the book format and should be ignored.
+          Pattern.compile("^CAPITOLO[ \t]*[0-9]+.*", Pattern.MULTILINE));
 
   private static final Pattern MULTI_LINE =
       Pattern.compile(
           "^(?!CAPITOLO)([0-9a-zA-ZéÀóíá¿¡βðɵ,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]]+)\\s*\\n\\s*([0-9a-zA-Z,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]~\uAC00-\uD7A3]+)[ \t]*$",
           Pattern.MULTILINE);
-  //      Pattern.compile(String.format("^([%s]+)\\s*\\n\\s*([%s]+)",
-  //          "0-9a-zA-Z,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]",
-  //          "0-9a-zA-Z,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]" + "~\uAC00-\uD7A3"),
-  // Pattern.MULTILINE);
 
   private static final Predicate<String> HAS_ENGLISH =
       Pattern.compile(".*[a-zA-Z]+.*").asPredicate();
@@ -48,7 +44,6 @@ public class RomanizeKorean {
   private static final Predicate<String> HAS_KOREAN =
       Pattern.compile(".*[\uAC00-\uD7A3]+.*").asPredicate();
 
-  //
   private static final Pattern LINE_REGEX =
       Pattern.compile(
           "^(?!CAPITOLO)([0-9a-zA-ZéÀóíá¿¡βðɵ,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]]+)[ \t]*([0-9a-zA-Z,.'/:;()?!_+=<>{}@#$%&^*`\\- \\[\\]~\uAC00-\uD7A3]+)[ \t]*$",
@@ -69,11 +64,14 @@ public class RomanizeKorean {
     long linesWithKorean = Arrays.stream(normalized.split("\n+")).filter(HAS_KOREAN).count();
     System.out.println("Lines with Korean: " + linesWithKorean);
 
-    long linesWithCapitolo =
+    long ignoredLines =
         Arrays.stream(normalized.split("\n+"))
-            .filter(line -> CAPITOLO.matcher(line).matches())
+            .filter(
+                line ->
+                    IGNORED_LINES.stream()
+                        .anyMatch(ignoredLine -> ignoredLine.matcher(line).matches()))
             .count();
-    System.out.println("Lines with capitolo: " + linesWithCapitolo);
+    System.out.println("Lines ignored: " + ignoredLines);
 
     // lines w/ multiple matches
     System.out.println("Lines w/ multiple translations: ");
@@ -92,17 +90,13 @@ public class RomanizeKorean {
         Arrays.stream(normalized.split("\\n+"))
             .map(
                 line -> {
-                  if (CAPITOLO.matcher(line).matches()) {
+                  if (IGNORED_LINES.stream()
+                      .anyMatch(ignoredLine -> ignoredLine.matcher(line).matches())) {
                     return line;
                   }
                   return addRomanizationToLine(line);
                 })
             .collect(Collectors.joining("\n\n"));
-
-    //    LINE_REGEX.matcher(normalized).results()
-    //        .map(MatchResult::group)
-    //        .map(RomanizeKorean::addRomanizationToLine)
-    //        .collect(Collectors.joining("\n\n"));
 
     System.out.println("Romanized line count: " + romanizedCount);
     File outputFile = new File(args[0].split("\\.")[0] + "-translations.txt");
@@ -145,9 +139,5 @@ public class RomanizeKorean {
 
   private static String romanize(String korean) {
     return KoreanRomanizer.romanize(korean).toLowerCase();
-  }
-
-  private static boolean hasEnglishAndKorean(String line) throws HangulParserException {
-    return true;
   }
 }
