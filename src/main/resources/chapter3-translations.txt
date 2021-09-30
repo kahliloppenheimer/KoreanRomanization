@@ -1,3 +1,5 @@
+CAPITOLO 3 - FRASI SIMBOLICHE CON VERBI DA CONOSCERE
+
 To abuse 남용(오용)하다/이용하다 (namyong(oyong)hada/iyonghada)
 
 The client has abused the waiter's patience
@@ -90,9 +92,7 @@ I have the right to ask for an explanation
 
 To like to ~하고 싶다/원하다 (~hago sipda/wonhada)
 
-I would like to rest for a bit
-저는 잠시 동안 쉬고 싶습니다.
-(jeoneun jamsi dong-an swigo sipseumnida.)
+I would like to rest for a bit 저는 잠시 동안 쉬고 싶습니다. (jeoneun jamsi dong-an swigo sipseumnida.)
 
 I would like an ice cream 저는 아이스크림을 원합니다. (jeoneun aiseukeurimeul wonhamnida.)
 
@@ -188,15 +188,9 @@ That man was being robbed and he has tried to defend himself
 
 To get off/to go downstairs 내리다/ 내려가다 (naerida/ naeryeogada)
 
-We have to take bus 170 and get off at the sto p (p)
-
-Stazione Trastevere'
-우리(저희)는 170버스를
-(uri(jeohui)neun 170beoseureul)
-
-Stazione Trastevere'
-정류장에서 내려야 합니다.
-(jeongnyujang-eseo naeryeoya hamnida.)
+We have to take bus 170 and get off at the stop 'Stazione Trastevere'
+우리(저희)는 170버스를 타고 'Stazione Trastevere'정류장에서 내려야 합니다.
+(uri(jeohui)neun 170beoseureul tago 'stazione trastevere'jeongnyujang-eseo naeryeoya hamnida.)
 
 I go downstairs to the reception to require breakfast for tomorrow
 저는 내일 아침식사를 요청하기 위해 리셉션으로 내려갔습니다.
@@ -410,9 +404,7 @@ Some parents should learn how to reproach their kids
 몇몇의 부모들은 그들의 아이를 꾸짖는 방법을 배워야 합니다.
 (myeonmyeochui bumodeureun geudeurui aireul kkujinneun bangbeobeul baewoya hamnida.)
 
-To have fun
-즐거운 시간을 보내다.
-(jeulgeoun siganeul bonaeda.)
+To have fun 즐거운 시간을 보내다. (jeulgeoun siganeul bonaeda.)
 
 It has been an incredible holiday, we had a lot of fun
 아주 멋진 휴일이었습니다. 저희는 즐거운 시간을 보냈습니다.
@@ -511,5 +503,5 @@ We would like to see the Caravaggio exhibition; do you know if there are any tic
 To want 원하다 (wonhada)
 
 I wanted to have a nice walk but it started raining and we had to change our plans
-멋진 산책을 하기를 원했지만, 비가오기 시작해서 우리(저희)는 계획을 변경해야만
-(meotjin sanchaegeul hagireul wonhaetjiman, bigaogi sijakaeseo uri(jeohui)neun gyehoegeul byeon-gyeonghaeyaman)
+멋진 산책을 하기를 원했지만, 비가오기 시작해서 우리(저희)는 계획을 변경해야만 했습니다.
+(meotjin sanchaegeul hagireul wonhaetjiman, bigaogi sijakaeseo uri(jeohui)neun gyehoegeul byeon-gyeonghaeyaman haetseumnida.)
