@@ -49,3 +49,8 @@ ${englishText}${whitespace}${koreanText}\n
 ```
 A few special exceptions to formatting were encoded in the logic to handle the particular
 formatting of the main test source text: `src/main/resources/whole-book.txt`.
+
+## Extra reading
+
+1. https://en.m.wikipedia.org/wiki/Revised_Romanization_of_Korean
+2. https://www.korean.go.kr/front_eng/roman/roman_01.do
