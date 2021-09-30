@@ -99,12 +99,13 @@ public class RomanizeKorean {
             .collect(Collectors.joining("\n\n"));
 
     System.out.println("Romanized line count: " + romanizedCount);
-    File outputFile = new File(args[0].split("\\.")[0] + "-translations.txt");
+    String outputFilePath = args[0].split("\\.")[0] + "-romanization.txt";
+    // Delete if it already exists and write over it.
+    File outputFile = new File(outputFilePath);
     if (outputFile.exists()) {
       outputFile.delete();
     }
-
-    Files.writeString(Path.of(args[0].split("\\.")[0] + "-translations.txt"), romanized);
+    Files.writeString(Path.of(outputFilePath), romanized);
   }
 
   private static String normalize(String contents) {
