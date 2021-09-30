@@ -23,7 +23,7 @@ Example inputs:
 Your brother looks nice.
 당신의 형/오빠/남동생은(는) 잘 생겨 보입니다.
 
-The problem risulted difficult.  그 문제는 어려운 것으로 판단되었습니다.
+The problem resulted difficult.  그 문제는 어려운 것으로 판단되었습니다.
 ```
 
 Example outputs:
@@ -32,7 +32,7 @@ Your brother looks nice.
 당신의 형/오빠/남동생은(는) 잘 생겨 보입니다.
 (dangsinui hyeong/oppa/namdongsaeng-eun(neun) jal saenggyeo boimnida.)
 
-The problem risulted difficult.
+The problem resulted difficult.
 그 문제는 어려운 것으로 판단되었습니다.
 (geu munjeneun eoryeoun geoseuro pandandoe-eotseumnida.)
 
